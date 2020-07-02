@@ -3,7 +3,6 @@ from selenium.webdriver.common.by import By
 
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    TOVAR_LINK = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-shellcoders-handbook_209/?promo=newYear"
 
 
 class LoginPageLocators():
@@ -18,4 +17,4 @@ class LoginPageLocators():
     REGISTER_FORM = (By.ID, '#register_form')
 
 class AddBasket():
-    BUTTON_ADD = (By.CSS_SELECTOR, '.btn - add - to - basket')
+    BUTTON_ADD = ('btn-add-to-basket')

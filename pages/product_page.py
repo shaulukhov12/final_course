@@ -1,11 +1,17 @@
-from .pages.locators import *
+from selenium.webdriver.common.by import By
+
 from base_page import BasePage
+from locators import AddBasket
 
 
-class PageItems(BasePage):
-    def can_add_product_to_basket(self):
-        page = MainPage(browser, TOVAR_LINK)# инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес
-        page.open()  # открываем страницу
-        add_to_button = self.browser.find_element(BUTTON_ADD)
-        add_to_button.click()
-        page.solve_quiz_and_get_code()
+class ProductPage(BasePage):
+
+    # секция аттрибутов
+    @property
+    def add_to_basket_button(self):
+        btn = self.browser.find_element_by_class_name(AddBasket.BUTTON_ADD)
+        return btn
+
+    # секция методов
+    def add_to_basket(self):
+        self.add_to_basket_button.click()

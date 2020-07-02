@@ -1,15 +1,14 @@
+import math
+
+from selenium.common.exceptions import NoAlertPresentException  # в начале файла
 from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import NoAlertPresentException # в начале файла
 
 
 class BasePage:
-    def __init__(self, browser, url, timeout=10):
+    def __init__(self, browser, timeout=10):
         self.browser = browser
-        self.url = url
+        # self.url = url
         self.browser.implicitly_wait(timeout)
-
-    def open(self):
-        self.browser.get(self.url)
 
     def is_element_present(self, how, what):
         try:
