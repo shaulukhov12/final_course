@@ -2,7 +2,7 @@ import time
 from client import Client
 
 
-TOVAR_LINK = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-shellcoders-handbook_209/?promo=newYear"
+TOVAR_LINK = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
 
 
 class Test():
@@ -12,7 +12,8 @@ class Test():
         page.add_to_basket()
         time.sleep(2)
         page.solve_quiz_and_get_code()
-        #time.sleep()
+        page.should_be_message_about_adding()
+        page.should_be_message_basket_total()
 
 
 if __name__ == '__main__':
